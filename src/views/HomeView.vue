@@ -1,9 +1,9 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+import MemoryGame from '../components/MemoryGame.vue'
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <memory-game />
   </main>
 </template>
