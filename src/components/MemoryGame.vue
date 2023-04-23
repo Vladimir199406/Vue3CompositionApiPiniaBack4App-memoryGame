@@ -30,15 +30,15 @@ const canInteract = ref(true)
 const prevSelected = ref(null)
 const icons = [
   '',
-  'fa-archway',
-  'fa-anchor',
-  'fa-apple-whole',
-  'fa-award',
-  'fa-bahai',
-  'fa-briefcase-medical',
-  'fa-burger',
-  'fa-camera-retro',
-  'fa-car'
+  'fa-ghost',
+  'fa-tree',
+  'fa-gamepad',
+  'fa-crown',
+  'fa-meteor',
+  'fa-ice-cream',
+  'fa-couch',
+  'fa-crow',
+  'fa-bucket'
 ]
 const selectCard = (i) => {
   if (store.gameInstance?.solved?.includes(i) || prevSelected.value === i) {
