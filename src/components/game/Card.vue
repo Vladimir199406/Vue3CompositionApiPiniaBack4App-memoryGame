@@ -1,8 +1,14 @@
 <template>
   <div class="flip-box">
-    <div class="flip-box-inner transition-all duration-500" :class="selected || solved ? ['flip'] : ['cursor-pointer']">
+    <div
+      class="flip-box-inner transition-all duration-500"
+      :class="selected || solved ? ['flip'] : ['cursor-pointer']"
+    >
       <div class="flip-box-front bg-dark-active hover:bg-dark-hover" />
-      <div class="flip-box-back select-none " :class="selected ? ['bg-primary-idle'] : ['bg-dark-idle']">
+      <div
+        class="flip-box-back select-none"
+        :class="selected ? ['bg-primary-idle'] : ['bg-dark-idle']"
+      >
         <slot></slot>
       </div>
     </div>
@@ -10,10 +16,11 @@
 </template>
 
 <script setup>
+//data
 const props = defineProps({
   selected: {
     type: Boolean,
-    default: false,
+    default: false
   },
   solved: {
     type: Boolean,
