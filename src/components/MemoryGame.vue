@@ -50,10 +50,8 @@ const selectCard = (i) => {
     prevSelected.value = i
     if (store.gameInstance.selectedPair.length === 2) {
       if (checkIfPair()) {
-        console.log("Es par")
         setTimeout(onPair, 1000)
       } else {
-        console.log("No es par")
         setTimeout(onNotPair, 1000)
       }
     } else {
