@@ -18,28 +18,21 @@
 </template>
 <script setup>
 import { ref } from 'vue'
-import Card from '@/components/game/Card.vue';
-import { useStore } from '@/stores/store';
-import SinglePlayer from './game/SinglePlayer.vue';
-import Multiplayer from './game/MultiPlayer.vue';
-import GameOver from './GameOver.vue';
+import Card from '@/components/game/Card.vue'
+import { useStore } from '@/stores/store'
+import SinglePlayer from './game/SinglePlayer.vue'
+import Multiplayer from './game/MultiPlayer.vue'
+import GameOver from './GameOver.vue'
+import { icons } from '@/state/staticTextsState'
+
+//data
 const store = useStore()
 const size4Grid = ['gap-3', 'text-4xl', 'sm:max-w-[532px]', 'sm:gap-4', 'sm:text-7xl']
 const size6Grid = ['gap-2', 'text-2xl', 'sm:max-w-[572px]', 'sm:text-5xl']
 const canInteract = ref(true)
 const prevSelected = ref(null)
-const icons = [
-  '',
-  'fa-ghost',
-  'fa-tree',
-  'fa-gamepad',
-  'fa-crown',
-  'fa-meteor',
-  'fa-ice-cream',
-  'fa-couch',
-  'fa-crow',
-  'fa-bucket'
-]
+
+//methods
 const selectCard = (i) => {
   if (store.gameInstance?.solved?.includes(i) || prevSelected.value === i) {
     return

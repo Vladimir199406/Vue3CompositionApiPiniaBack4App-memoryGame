@@ -9,10 +9,10 @@
       <Singleplayer v-else />
       <div class="flex flex-col gap-4 text-lg sm:flex-row">
         <BtnPrimary class="w-full sm:py-3" @click="restart">
-          {{ staticText.restartGame }} <i :class="[icons.restartGame]"></i>
+          {{ staticText.restartGame }} <i :class="[iconsMenu.restartGame]"></i>
         </BtnPrimary>
         <BtnSecondary class="w-full sm:py-3" @click="newGame">
-          {{ staticText.newGameSetup }} <i :class="[icons.newGameSetup]"></i>
+          {{ staticText.newGameSetup }} <i :class="[iconsMenu.newGameSetup]"></i>
         </BtnSecondary>
       </div>
     </div>
@@ -26,8 +26,7 @@ import BtnPrimary from './buttons/Primary.vue'
 import BtnSecondary from './buttons/Secondary.vue'
 import MultiplayerScore from './gameOver/MultiplayerScore.vue'
 import Singleplayer from './gameOver/Singleplayer.vue'
-import { icons } from '@/state/bindedWithIconsState'
-import { staticText } from '@/state/staticTextsState'
+import { staticText, iconsMenu } from '@/state/staticTextsState'
 
 //data
 const store = useStore()
