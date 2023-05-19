@@ -1,7 +1,7 @@
 <template>
   <button
     class="bg-dark-idle hover:bg-dark-hover rounded-4xl text-white font-bold text-md w-full"
-    :class="selected ? 'bg-dark-active' : ''"
+    :style="{background: selected ? '#7191A5' : ''}"
   >
     <slot />
   </button>

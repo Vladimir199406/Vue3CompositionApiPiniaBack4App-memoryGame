@@ -23,7 +23,14 @@ export const icons = [
   'fa-ice-cream',
   'fa-couch',
   'fa-crow',
-  'fa-bucket'
+  'fa-bucket',
+  'fa-leaf',
+  'fa-plane',
+  'fa-key',
+  'fa-bell',
+  'fa-snowflake',
+  'fa-fish',
+  'fa-trophy'
 ]
 
 export const iconsMenu = {
