@@ -6,6 +6,6 @@
     "options": [1, 2, 3, 4]
   },
   "size": {
-    "options": ["4x4", "6x6"]
+    "options": ["4x4", "6x6", "8x8"]
   }
 }

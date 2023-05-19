@@ -10,6 +10,7 @@
           @update:state="updateTheme"
         />
       </div>
+      <!--ADD THEME ICONS TOGGLE-->
       <div>
         <h2 class="text-title font-bold pb-2 sm:text-xl sm:pb-4">{{ staticText.numbersOfPlayers }}</h2>
         <Selection
