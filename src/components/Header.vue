@@ -1,6 +1,6 @@
 <template>
-  <header class="flex justify-between items-center">
-    <h1 class="text-2xl font-bold sm:text-4xl">{{ staticText.memory }} Game</h1>
+  <header class="">
+    <!-- <h1 class="text-2xl font-bold sm:text-4xl">{{ staticText.memory }} Game</h1> -->
     <div class="sm:hidden">
       <BtnPrimary class="px-8" @click="clickMobile">Menu</BtnPrimary>
       <MobileMenu v-if="store.mobileMenu && store.gameStarted" />
@@ -37,3 +37,10 @@ const newGame = () => {
   store.newGame()
 }
 </script>
+
+<style scoped>
+  h1 {
+    color: #FDA214;
+    font-size: 32px;
+  }
+</style>

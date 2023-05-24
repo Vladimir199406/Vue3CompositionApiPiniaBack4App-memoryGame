@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white p-6 rounded-xl w-full flex flex-col gap-4 sm:p-14">
+  <div class="bg-white p-6 w-full flex flex-col gap-4 sm:p-14 rounded-top">
     <div class="pb-4 flex flex-col gap-5 sm:gap-7">
       <div>
         <h2 class="text-title font-bold pb-2 sm:text-xl sm:pb-4">{{ staticText.selectTheme }}</h2>
@@ -59,3 +59,9 @@ const startGame = () => {
   store.startGame()
 }
 </script>
+
+<style scoped>
+  .rounded-top {
+    border-radius: 0 0 0.75rem 0.75rem;
+  }
+</style>
