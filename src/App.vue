@@ -6,6 +6,15 @@
       <HeaderVue v-if="store.gameStarted" />
       <main>
         <div>
+          <button @click="signUpBack4App('dev1745', '1234', 'dev17.45/07.06.2023@mail.ru')">
+            CREATE TEST USER
+          </button>
+          <br>
+          <br>
+          <br>
+          <button @click="loginBack4App('dev1745', '1234')">
+            LOGIN TEST USER
+          </button>
           <MainMenu v-if="!store.gameStarted" />
           <MemoryGame v-else />
         </div>
@@ -18,8 +27,18 @@ import HeaderVue from '@/components/Header.vue'
 import MainMenu from './components/MainMenu.vue'
 import { useStore } from '@/stores/store'
 import MemoryGame from './components/MemoryGame.vue'
+import { connectBack4App, signUpBack4App, loginBack4App, accessToken } from '@/state/back4app.js'
+import { onMounted } from 'vue'
+
+//data
 const store = useStore()
 
+//hooks
+onMounted(() => {
+  connectBack4App()
+})
+
+//animation logic BELOW
 var canvas = document.createElement('canvas')
 var width = (canvas.width = window.innerWidth * 0.75)
 var height = (canvas.height = window.innerHeight * 0.75)
@@ -130,6 +149,9 @@ gl.vertexAttribPointer(
 var metaballsHandle = getUniformLocation(program, 'metaballs')
 
 loop()
+//animation logic ABOVE
+
+//methods
 function loop() {
   for (var i = 0; i < numMetaballs; i++) {
     var metaball = metaballs[i]
@@ -192,9 +214,13 @@ canvas.onmousemove = function (e) {
 
 <style>
 .bg-body-gradient-setup {
-  background: #1c92d2;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #98b7bd, #4f7d96);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #86a4aa, #4f7d96); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #1c92d2; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #98b7bd, #4f7d96); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #86a4aa,
+    #4f7d96
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .bg-body-gradient-defualt {
@@ -215,5 +241,4 @@ canvas.onmousemove = function (e) {
 canvas {
   width: 100%;
 }
-
 </style>

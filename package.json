@@ -8,6 +8,9 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@types/parse": "^3.0.4",
+    "@vueuse/core": "^10.1.2",
+    "parse": "^4.1.0",
     "pinia": "^2.0.32",
     "vue": "^3.2.47"
   },
@@ -17,8 +20,8 @@
     "@vue/eslint-config-prettier": "^7.1.0",
     "eslint": "^8.34.0",
     "eslint-plugin-vue": "^9.9.0",
-    "prettier": "^2.8.4",
     "postcss": "^8.4.16",
+    "prettier": "^2.8.4",
     "tailwindcss": "^3.3.1",
     "vite": "^4.1.4"
   }
