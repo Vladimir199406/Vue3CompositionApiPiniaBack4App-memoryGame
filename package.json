@@ -9,9 +9,12 @@
   },
   "dependencies": {
     "@types/parse": "^3.0.4",
+    "@vee-validate/rules": "^4.9.6",
     "@vueuse/core": "^10.1.2",
+    "lodash": "^4.17.21",
     "parse": "^4.1.0",
     "pinia": "^2.0.32",
+    "vee-validate": "^4.9.6",
     "vue": "^3.2.47"
   },
   "devDependencies": {

@@ -1,9 +1,12 @@
 import { ref } from 'vue'
-import Parse from 'parse/dist/parse.min.js';
+import Parse from 'parse/dist/parse.min.js'
 import { useStorage } from '@vueuse/core'
 
 //data
 export const accessToken = useStorage('my-flag', '')
+
+export const authModalShow = ref(false)
+export const tab = ref('login')
 
 //methods
 export function connectBack4App() {
@@ -11,35 +14,50 @@ export function connectBack4App() {
   Parse.serverURL = import.meta.env.VITE_PARSE_HOST_API
 }
 
-export function signUpBack4App(username, password, email) {
-  
+export const signUpBack4App = async (values) => {
   const user = new Parse.User()
-  user.set('username', username)
-  user.set('password', password)
-  user.set('email', email)
+  user.set('username', values.username)
+  user.set('password', values.password)
+  user.set('email', values.email)
 
-  user.signUp()
-    .then(function (user) {
+  let responseValue = null
+
+  await user
+    .signUp()
+    .then((user) => {
       console.log(
-        'SUCCESS, user was created: ' +
-          user.get('username') +
-          ' and email: ' +
-          user.get('email')
+        'SUCCESS, user was created: ' + user.get('username') + ' and email: ' + user.get('email')
       )
+      responseValue = user
     })
-    .catch(function (error) {
+    .catch((error) => {
       console.log('ERROR: ' + error.code + ' ' + error.message)
+      responseValue = error
     })
+
+  return responseValue
 }
 
-export function loginBack4App(username, password) {
-  console.log(username, password)
-  const user = Parse.User.logIn(username, password)
+export const loginBack4App = async (values) => {
+  let responseValue = null
+
+  await Parse.User.logIn(values.username, values.password)
     .then((user) => {
       accessToken.value = user.attributes.sessionToken
-      console.log('User logged in successfuly with name: ' + user.get('username'))
+      responseValue = user
     })
-    .catch(function (error) {
+    .catch((error) => {
       console.log('Error: ' + error.code + ' ' + error.message)
+      responseValue = error
     })
+
+  return responseValue
+}
+
+export function toggleAuthModal(flag) {
+  if (flag === true) {
+    flag = false
+  } else {
+    flag = true
+  }
 }

@@ -5,18 +5,12 @@
     >
       <HeaderVue v-if="store.gameStarted" />
       <main>
-        <div>
-          <button @click="signUpBack4App('dev1745', '1234', 'dev17.45/07.06.2023@mail.ru')">
-            CREATE TEST USER
-          </button>
-          <br>
-          <br>
-          <br>
-          <button @click="loginBack4App('dev1745', '1234')">
-            LOGIN TEST USER
-          </button>
+        <div v-if="accessToken">
           <MainMenu v-if="!store.gameStarted" />
           <MemoryGame v-else />
+        </div>
+        <div v-else>
+          <AuthModal/>
         </div>
       </main>
     </div>
@@ -27,7 +21,8 @@ import HeaderVue from '@/components/Header.vue'
 import MainMenu from './components/MainMenu.vue'
 import { useStore } from '@/stores/store'
 import MemoryGame from './components/MemoryGame.vue'
-import { connectBack4App, signUpBack4App, loginBack4App, accessToken } from '@/state/back4app.js'
+import AuthModal from './components/Auth/Auth.vue';
+import { connectBack4App, accessToken } from '@/state/back4app.js'
 import { onMounted } from 'vue'
 
 //data
