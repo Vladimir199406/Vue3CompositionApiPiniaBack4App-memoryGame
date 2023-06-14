@@ -22,7 +22,8 @@ import MainMenu from './components/MainMenu.vue'
 import { useStore } from '@/stores/store'
 import MemoryGame from './components/MemoryGame.vue'
 import AuthModal from './components/Auth/Auth.vue';
-import { connectBack4App, accessToken } from '@/state/back4app.js'
+import { connectBack4App } from '@/back4App/connect.js'
+import { accessToken } from '@/state/auth.js'
 import { onMounted } from 'vue'
 
 //data

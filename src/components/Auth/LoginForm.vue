@@ -45,7 +45,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import { loginBack4App } from '@/state/back4app.js'
+import { loginBack4App } from '@/state/auth.js'
 
 //data
 const loginSchema = ref({

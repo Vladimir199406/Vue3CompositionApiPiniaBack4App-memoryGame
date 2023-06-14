@@ -66,7 +66,7 @@
 <script setup>
 import AppLoginForm from './LoginForm.vue'
 import AppRegisterForm from './RegisterForm.vue'
-import { authModalShow, tab } from '../../state/back4app'
+import { authModalShow, tab } from '@/state/auth'
 
 </script>
 

@@ -82,7 +82,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import { signUpBack4App, tab } from '@/state/back4app.js'
+import { signUpBack4App, tab } from '@/state/auth.js'
 
 //data
 const schema = ref({

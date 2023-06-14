@@ -9,11 +9,6 @@ export const authModalShow = ref(false)
 export const tab = ref('login')
 
 //methods
-export function connectBack4App() {
-  Parse.initialize(import.meta.env.VITE_PARSE_APP_ID, import.meta.env.VITE_PARSE_JS_KEY)
-  Parse.serverURL = import.meta.env.VITE_PARSE_HOST_API
-}
-
 export const signUpBack4App = async (values) => {
   const user = new Parse.User()
   user.set('username', values.username)
